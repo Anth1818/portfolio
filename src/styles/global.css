@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme{
+    --color-primary: #021F40;
+    --color-secondary: #06445A;
+    --color-tertiary-200: #EE6B04;
+    --color-tertiary-400: #EE5E04;
+}
+
+@font-face {
+    font-family: 'fa-brands-400';
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    src: url(../../public/fonts/fa-brands-400.woff);
+
+}
+body{
+    font-family: 'fa-brands-400', sans-serif;
+}

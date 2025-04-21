@@ -1,0 +1,12 @@
+---
+const {title, colorSection} = Astro.props
+---
+
+<section
+  class={`flex flex-col items-center lg:flex-row gap-10 lg:justify-center lg:items-center w-full h-screen bg-${colorSection} text-white`}
+>
+ <h2 class="lg:self-start lg:pt-15 pt-10">{title}</h2>
+ <div class="flex justify-center items-center">
+    <slot></slot>
+ </div>
+</section>

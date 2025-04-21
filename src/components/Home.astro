@@ -1,0 +1,102 @@
+---
+import { Icon } from "astro-icon/components";
+import Navigation from "./Navigation.astro";
+---
+
+<!-- ---Home -->
+<section class="h-full">
+  <!-- ----nav -->
+  <Navigation />
+  <!-- ----hero -->
+  <section>
+    <div>
+      <img
+        src="/public/hero-image.jpg "
+        alt="hero image"
+        class="w-full h-screen object-cover object-center "
+        loading="lazy"
+      />
+    </div>
+    <!-- ----layer blue -->
+    <div
+      class="absolute top-0 left-0 w-full h-full bg-secondary opacity-80"
+    >
+    </div>
+
+    <!-- information -->
+    <article
+      class="absolute top-15 lg:top-35 lg:left-10 w-80 sm:w-1/2"
+    >
+      <div class="flex flex-col justify-center gap-5 ml-10">
+        <h1 class="text-3xl text-white font-bold">
+          <span class="text-tertiary-200">Hi, I'ts me</span>
+          <br />
+          <span class="font-mono text-5xl inline-block">Anthony Ruiz</span>
+        </h1>
+        <h2 class="text-4xl text-white font-semibold">
+          And I'm a <span class="text-tertiary-200">Frontend Developer</span>
+        </h2>
+        <p class="text-white text-lg font-semibold hidden lg:block">
+          I am a passionate Frontend Developer with a strong focus on creating
+          user-friendly and visually appealing web applications. I am always
+          eager to learn and grow in the field of web development.
+        </p>
+        <p class="text-white text-lg font-semibold lg:hidden">
+          I am a passionate Frontend Developer with a strong focus on creating
+          user-friendly and visually appealing web applications.
+        </p>
+        <!-- social media icons -->
+        <div class="flex gap-5 pt-4">
+          <a
+            href="https://www.linkedin.com/in/anthony-ruiz-7820b7161/"
+            target="_blank"
+            class="text-white text-3xl hover:text-tertiary-200 transition duration-300 border p-2 rounded-full"
+          >
+            <Icon name="EntypoSocialLinkedin" />
+            <!-- <span class="visible">Linkedin</span> -->
+          </a>
+          <a
+            href="https://github.com/Anth1818"
+            target="_blank"
+            class="text-white text-3xl hover:text-tertiary-200 transition duration-300 border p-2 rounded-full"
+          >
+            <Icon name="EntypoSocialGithub" />
+            <!-- <span class="visible">Linkedin</span> -->
+          </a>
+          <a
+            href="https://github.com/Anth1818"
+            target="_blank"
+            class="text-white text-3xl hover:text-tertiary-200 transition duration-300 border p-2 rounded-full"
+          >
+            <Icon name="MdiDiscord" />
+            <!-- <span class="visible">Linkedin</span> -->
+          </a>
+          <a
+            href="https://github.com/Anth1818"
+            target="_blank"
+            class="text-white text-3xl hover:text-tertiary-200 transition duration-300 border p-2 rounded-full"
+          >
+            <Icon name="MdiInstagram" />
+            <!-- <span class="visible">Linkedin</span> -->
+          </a>
+        </div>
+        <div class="">
+          <a
+            href="/src/assets/Cv.pdf"
+            download
+            class="w-[250px] p-2 rounded-3xl bg-tertiary-400 text-white font-semibold text-center block text-lg"
+          >
+            Download CV
+          </a>
+        </div>
+      </div>
+    </article>
+  </section>
+</section>
+
+<style>
+  .font-logo {
+    font-family: "fa-brands-400", cursive;
+    font-size: 3rem;
+  }
+</style>

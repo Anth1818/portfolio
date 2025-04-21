@@ -1,0 +1,42 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<nav
+    class="hidden lg:absolute top-0 left-0 lg:flex lg:flex-row w-full gap-1 justify-around items-center bg-primary text-white h-20 z-10">
+      <img src="/src/icons/AR.Dev.svg" alt="logo" class="w-20 h-20" />
+
+      <!-- ------links -->
+      <section class="flex gap-10">
+        <ul class="flex gap-10 items-center">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About me</a></li>
+          <li><a href="#projects">Portfolio</a></li>
+          <li><a href="#technologies">Technologies</a></li>
+          <li><a href="#soft-skills">Soft Skills</a></li>
+        </ul>
+  
+        <!-- contact me -->
+        <a
+          href="#contact"
+          class="border p-1.5 w-36 rounded-3xl bg-white text-black font-semibold text-center"
+        >
+          Contact me</a
+        >
+      </section>
+  
+      <!-- language -->
+      <section class="flex gap-10">
+        <div class="flex gap-2 items-center">
+          <h3>English</h3>
+          <Icon name="CircleFlagsUs" />
+        </div>
+  
+        <div class="flex gap-2 items-center">
+          <h3>Spanish</h3>
+          <Icon name="CircleFlagsEs" />
+        </div>
+      </section>
+    <!----logo -->
+   
+  </nav>
