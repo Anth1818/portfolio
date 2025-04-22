@@ -1,7 +1,39 @@
 ---
-import LayoutSection from '../layouts/LayoutSection.astro';
-
+import LayoutSection from "../layouts/LayoutSection.astro";
+import Badges from "./Badges.astro";
 ---
-<LayoutSection title="About Me" colorSection="primary">
-</LayoutSection>
 
+<LayoutSection title="About Me" colorSection="primary" id="about">
+  <section class="flex flex-col md:flex-row justify-around items-center gap-10 md:gap-30  text-white">
+    <!-- Photo -->
+    <div class="max-w-[100px] md:max-w-[250px]">
+      <img
+        src="/public/foto-linkedin.jpg"
+        alt="Foto de perfil"
+        class="w-fit rounded-3xl border-tertiary-400"
+      />
+    </div>
+    <!-- Description -->
+    <div class="max-w-[300px] md:max-w-[500px] ">
+     <h2 class="text-3xl font-semibold">Frontend Developer</h2>
+     <div class="flex justify-start gap-2 mt-2 mb-4 ">
+        <Badges text="HTML" />
+        <Badges text="CSS" />
+        <Badges text="JavaScript" />
+        <Badges text="React" />
+        <Badges text="Astro" />
+     </div>
+      <p class="text-justify text-lg md:leading-8 ">
+        My goal is to continuously learn and grow in the field of software
+        development, contributing to projects that make a positive impact on
+        users and the community, and to be part of a team that values collaboration and innovation.
+      </p>
+    </div>
+  </section>
+  <a
+  href="#projects"
+  class="hidden md:block w-[250px] p-2 ml-26 rounded-3xl bg-tertiary-400 text-white font-semibold text-center text-lg"
+>
+  Look at my projects
+</a>
+</LayoutSection>

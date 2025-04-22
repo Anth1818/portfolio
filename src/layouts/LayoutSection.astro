@@ -1,12 +1,18 @@
 ---
-const {title, colorSection} = Astro.props
+import { array } from "astro:schema"
+
+const {title, colorSection, id} = Astro.props
+const arrayTitle = title.split(' ')
+
+const phraseModified = arrayTitle.length === 1 ? false : arrayTitle[arrayTitle.length - 1]
+
+const titleModified = arrayTitle.filter((word: string) => word !== phraseModified).join(' ')
 ---
 
 <section
-  class={`flex flex-col items-center lg:flex-row gap-10 lg:justify-center lg:items-center w-full h-screen bg-${colorSection} text-white`}
+id={id}
+  class={`flex flex-col items-center justify-start gap-10 w-full h-dvh bg-${colorSection} text-white`}
 >
- <h2 class="lg:self-start lg:pt-15 pt-10">{title}</h2>
- <div class="flex justify-center items-center">
+ <h2 class=" pt-10 text-3xl border-b-2 pb-2 border-b-tertiary-400">{titleModified} <span class="text-tertiary-400">{phraseModified}</span></h2>
     <slot></slot>
- </div>
 </section>
