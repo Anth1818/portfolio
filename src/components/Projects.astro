@@ -1,6 +1,60 @@
 ---
+import { Icon } from "astro-icon/components";
 import LayoutSection from "../layouts/LayoutSection.astro";
 ---
-<LayoutSection title="Projects" colorSection="secondary" id="projects">
 
+<LayoutSection title="Projects" colorSection="secondary" id="projects">
+  <div
+    class="grid gap-y-10 w-3/4 md:grid md:grid-cols-[repeat(3,1fr)] md:grid-rows-[repeat(3,1fr)] md:gap-y-[10px] md:gap-x-[10px]"
+  >
+    <div class="relative group">
+      <img
+        src="/public/capture-projects/project-1/captura-1.png"
+        alt="Project 1"
+        class="w-full h-[150px] md:h-[200px] object-cover rounded-lg"
+      />
+      <a href="#home">
+        <div
+          class="absolute inset-0 bg-primary bg-opacity-70 flex flex-col justify-center items-center opacity-80 md:opacity-0 md:group-hover:opacity-80 transition-opacity duration-300 rounded-lg"
+        >
+          <p class="text-white text-lg font-bold mb-2">Attendance control</p>
+          <Icon name="Link" />
+        </div>
+      </a>
+    </div>
+    <div class="relative group">
+      <img
+        src="/public/capture-projects/project-2/captura-1.png"
+        alt="Project 1"
+        class="w-full h-[150px] md:h-[200px] object-cover rounded-lg"
+      />
+      <a href="#home">
+        <div
+          class="absolute inset-0 bg-primary bg-opacity-70 flex flex-col justify-center items-center opacity-80 md:opacity-0 md:group-hover:opacity-80 transition-opacity duration-300 rounded-lg"
+        >
+          <p class="text-white text-lg font-bold mb-2">
+            Worker ID card generator
+          </p>
+          <Icon name="Link" />
+        </div>
+      </a>
+    </div>
+    <div class="relative group">
+      <img
+        src="/public/capture-projects/project-3/captura-1.jpeg"
+        alt="Project 1"
+        class="w-full h-[150px] md:h-[200px] object-cover rounded-lg"
+      />
+      <a href="#home">
+        <div
+          class="absolute inset-0 bg-primary bg-opacity-70 flex flex-col justify-center items-center opacity-80 md:opacity-0 md:group-hover:opacity-80 transition-opacity duration-300 rounded-lg"
+        >
+          <p class="text-white text-lg font-bold mb-2">
+            Activity management system
+          </p>
+          <Icon name="Link" />
+        </div>
+      </a>
+    </div>
+  </div>
 </LayoutSection>

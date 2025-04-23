@@ -1,0 +1,65 @@
+---
+
+---
+
+<style>
+    .scroll-to-top {
+      z-index: 1000;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ff5e00;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: opacity 0.3s ease-in-out;
+    }
+  
+    .scroll-to-top.visible {
+      opacity: 1;
+    }
+  </style>
+  
+  <button class="scroll-to-top" id="scrollToTopButton">
+    ↑
+  </button>
+
+  <script>
+    const scrollToTopButton = document.getElementById("scrollToTopButton");
+    scrollToTopButton?.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+  
+  <script>
+    let isVisible = false;
+  
+    // Mostrar el botón cuando el usuario haga scroll hacia abajo
+    const handleScroll = () => {
+      const button = document.querySelector(".scroll-to-top");
+      if (window.scrollY > 200) {
+        if (!isVisible) {
+          isVisible = true;
+          button?.classList.add("visible");
+        }
+      } else {
+        if (isVisible) {
+          isVisible = false;
+          button?.classList.remove("visible");
+        }
+      }
+    };
+  
+    // Agregar el evento de scroll
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
+    }
+  </script>
