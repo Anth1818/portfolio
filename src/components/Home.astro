@@ -1,6 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
 import Navigation from "./Navigation.astro";
+import IconWithLabel from "./IconWithLabel.astro";
+import AnchorWithIconAndLabel from "./AnchorWithIconAndLabel.astro";
 ---
 
 <!-- ---Home -->
@@ -11,22 +13,20 @@ import Navigation from "./Navigation.astro";
   <section>
     <div>
       <img
-        src="/public/hero-image.jpg "
+        src="/src/assets/hero-image.jpg"
         alt="hero image"
-        class="w-full h-screen object-cover object-center "
+        class="w-full h-screen object-cover object-center"
         loading="lazy"
       />
     </div>
     <!-- ----layer blue -->
     <div
-      class="absolute top-0 left-0 w-full h-full bg-secondary opacity-80"
+      class="absolute top-0 left-0 w-full h-full bg-section-secondary opacity-80"
     >
     </div>
 
     <!-- information -->
-    <article
-      class="absolute top-15 lg:top-35 lg:left-10 w-80 sm:w-1/2"
-    >
+    <article class="absolute top-15 lg:top-35 lg:left-10 w-80 lg:w-1/2">
       <div class="flex flex-col justify-center gap-5 ml-10">
         <h1 class="text-3xl text-white font-bold">
           <span class="text-tertiary-200">Hi, I'ts me</span>
@@ -46,49 +46,33 @@ import Navigation from "./Navigation.astro";
           user-friendly and visually appealing web applications.
         </p>
         <!-- social media icons -->
-        <div class="flex gap-5 pt-4">
-          <a
-            href="https://www.linkedin.com/in/anthony-ruiz-7820b7161/"
-            target="_blank"
-            class="text-white text-3xl hover:text-tertiary-200 transition duration-300 border p-2 rounded-full"
-          >
-            <Icon name="EntypoSocialLinkedin" />
-            <!-- <span class="visible">Linkedin</span> -->
-          </a>
-          <a
+
+        <div class="flex gap-5">
+          <AnchorWithIconAndLabel
+            href="https://www.linkedin.com/in/anthonyruiz1818/"
+            iconName="Linkedin"
+            label="Linkedin"
+          />
+          <AnchorWithIconAndLabel
             href="https://github.com/Anth1818"
-            target="_blank"
-            class="text-white text-3xl hover:text-tertiary-200 transition duration-300 border p-2 rounded-full"
-          >
-            <Icon name="EntypoSocialGithub" />
-            <!-- <span class="visible">Linkedin</span> -->
-          </a>
-          <a
-            href="https://github.com/Anth1818"
-            target="_blank"
-            class="text-white text-3xl hover:text-tertiary-200 transition duration-300 border p-2 rounded-full"
-          >
-            <Icon name="MdiDiscord" />
-            <!-- <span class="visible">Linkedin</span> -->
-          </a>
-          <a
-            href="https://github.com/Anth1818"
-            target="_blank"
-            class="text-white text-3xl hover:text-tertiary-200 transition duration-300 border p-2 rounded-full"
-          >
-            <Icon name="MdiInstagram" />
-            <!-- <span class="visible">Linkedin</span> -->
-          </a>
+            iconName="Github"
+            label="Github"
+          />
+          <AnchorWithIconAndLabel
+            href="https://discord.com/channels/@me"
+            iconName="Discord"
+            label="Discord"
+          />
         </div>
-        <div>
-          <a
-            href="/src/assets/Cv.pdf"
-            download
-            class="w-[250px] p-2 rounded-3xl bg-tertiary-400 text-white font-semibold text-center block text-lg"
-          >
-            Download CV
-          </a>
-        </div>
+      </div>
+      <div>
+        <a
+          href="/src/assets/Cv.pdf"
+          download
+          class="w-[250px] p-2 m-8 rounded-3xl bg-tertiary-400 text-white font-semibold text-center block text-lg"
+        >
+          Download CV
+        </a>
       </div>
     </article>
   </section>

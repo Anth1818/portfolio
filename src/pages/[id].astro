@@ -1,0 +1,76 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import { CarouselImg } from "../components/CarouselImages.tsx";
+import "../styles/global.css";
+import IconWithLabel from "@/components/IconWithLabel.astro";
+
+
+export async function getStaticPaths() {
+
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { id: project.data.slug }, 
+    props: { project },
+  }));
+}
+const { project } = Astro.props;
+const { Content } = await render(project);
+const {techStack, github, id, images, title, note, slug} = project.data;
+---
+
+<Layout id={id}>
+  <section class="bg-section-primary w-full h-full">
+    <CarouselImg client:load arrayImg={images} slug={slug}/>
+    <div
+      class="w-full mx-auto flex flex-col justify-center items-center gap-4 p-4 self-baseline text-white bg-section-primary"
+    >
+      <div
+        class="flex flex-col w-max-2xl md:w-2xl gap-4 justify-center items-center"
+      >
+        <h2
+          class="pt-10 text-3xl text-center border-b-2 pb-2 border-b-tertiary-400"
+        >
+          {title}
+        </h2>
+        <a
+          id="backToProjectsBtn"
+          href="#projects"
+          class="border-tertiary-200 p-3 rounded-3xl text-md font-bold self-center bg-tertiary-200 hover:bg-tertiary-400 transition-colors duration-300"
+          >Back to Projects</a
+        >
+        <Content />
+        <p>
+          <span class="text-tertiary-400 font-bold">Note:</span> {note}
+        </p>
+        <div class="flex gap-5 pt-4">
+          {techStack.map((item) => {
+            return (
+              <IconWithLabel
+                iconName={item}
+                label={item}
+
+              />
+            );
+          })}
+        </div>
+        <a
+          href={github}
+          target="_blank"
+          class="w-[250px] p-2 m-8 rounded-3xl bg-tertiary-400 text-white font-semibold text-center block text-lg"
+        >
+          Look at on Github
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const backToProjectsBtn = document.getElementById("backToProjectsBtn");
+  backToProjectsBtn?.addEventListener("click", () => {
+    window.location.href = "/#projects";
+  });
+</script>
+
+<!-- <h1>{title}</h1> -->
