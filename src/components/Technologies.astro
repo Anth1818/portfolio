@@ -1,5 +1,99 @@
 ---
+import { Icon } from "astro-icon/components";
 import LayoutSection from "../layouts/LayoutSection.astro";
+import IconWithLabel from "./IconWithLabel.astro";
 ---
-<LayoutSection title="Techologies" colorSection="primary" id="technologies">
+
+<LayoutSection
+  title="Techologies"
+  colorSection="section-primary"
+  id="technologies"
+>
+  <div
+    class="flex flex-col justify-center items-center md:flex-row gap-8 p-8 md:justify-between md:items-start w-full h-full"
+  >
+    <aside
+      class="flex flex-col items-center justify-start w-3/4 h-3/4 p-8 text-center text-white bg-section-secondary rounded-lg shadow-lg"
+    >
+      <h2 class="text-2xl font-bold">Stack</h2>
+      <p class="hidden md:block mt-2">
+        Here are some of the technologies I work with:
+      </p>
+
+      <!-- Render when the screen is medium or larger -->
+      <div class="hidden md:flex md:flex-row gap-8 mt-4 md:flex-wrap">
+        <IconWithLabel iconName="Html5" label="HTML" fontSize="text-6xl" />
+        <IconWithLabel iconName="Css3" label="CSS" fontSize="text-6xl" />
+        <IconWithLabel
+          iconName="Javascript"
+          label="JavaScript"
+          fontSize="text-6xl"
+        />
+        <IconWithLabel
+        iconName="Tailwind"
+        label="Tailwind"
+        fontSize="text-6xl"
+      />
+        <IconWithLabel
+          iconName="Typescript"
+          label="TypeScript"
+          fontSize="text-6xl"
+        />
+        <IconWithLabel iconName="React" label="React" fontSize="text-6xl" />
+        <IconWithLabel iconName="Nextjs" label="Nextjs" fontSize="text-6xl" />
+        <IconWithLabel iconName="Astro" label="Astro" fontSize="text-6xl" />
+        
+      </div>
+
+      <!-- Render when the screen is small -->
+      <div class="flex flex-row flex-wrap gap-9 mt-4 md:hidden">
+        <IconWithLabel iconName="Html5" label="HTML" fontSize="text-2xl" />
+        <IconWithLabel iconName="Css3" label="CSS" fontSize="text-2xl" />
+        <IconWithLabel
+          iconName="Javascript"
+          label="JavaScript"
+          fontSize="text-2xl"
+        />
+        <IconWithLabel
+          iconName="Typescript"
+          label="TypeScript"
+          fontSize="text-2xl"
+        />
+        <IconWithLabel iconName="React" label="React" fontSize="text-2xl" />
+        <IconWithLabel iconName="Nextjs" label="Nextjs" fontSize="text-2xl" />
+        <IconWithLabel iconName="Astro" label="Astro" fontSize="text-2xl" />
+      </div>
+    </aside>
+
+    <aside
+      class="flex flex-col items-center justify-start w-3/4 h-3/4 p-8 text-center text-white bg-section-secondary rounded-lg shadow-lg"
+    >
+      <h2 class="text-2xl font-bold">Tools</h2>
+      <p class="hidden md:block mt-2">
+        Here are some of the tools I work with:
+      </p>
+
+      <!-- Render when the screen is medium or larger -->
+      <div class="hidden md:flex md:flex-row gap-8 mt-4">
+        <IconWithLabel iconName="Vite" label="Vite" fontSize="text-6xl" />
+        <IconWithLabel iconName="Git" label="Git" fontSize="text-6xl" />
+        <IconWithLabel
+          iconName="MdiGithub"
+          label="Github"
+          fontSize="text-6xl"
+        />
+      </div>
+
+      <!-- Render when the screen is small -->
+      <div class="flex flex-row flex-wrap gap-8 mt-4 md:hidden">
+        <IconWithLabel iconName="Vite" label="Vite" fontSize="text-2xl" />
+        <IconWithLabel iconName="Git" label="Git" fontSize="text-2xl" />
+        <IconWithLabel
+          iconName="MdiGithub"
+          label="Github"
+          fontSize="text-2xl"
+        />
+      </div>
+    </aside>
+  </div>
 </LayoutSection>

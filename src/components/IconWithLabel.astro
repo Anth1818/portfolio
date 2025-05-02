@@ -1,13 +1,13 @@
 ---
 import { Icon } from "astro-icon/components";
 
-const { iconName, label } = Astro.props;
+const { iconName, label, fontSize  } = Astro.props;
 ---
 
 <div class="relative group">
-  <Icon name={iconName} class={"text-4xl hover:text-tertiary-200 transition duration-300"} />
+  <Icon name={iconName} class= `text-4xl ${fontSize} hover:text-tertiary-200 transition duration-300` />
   <span
-    class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-bold"
+    class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 text-white text-sm opacity-80 md:opacity-0 md:group-hover:opacity-80 transition-opacity duration-300 font-bold"
   >
     {label}
   </span>
