@@ -1,5 +1,177 @@
 ---
+import { Icon } from "astro-icon/components";
 import LayoutSection from "../layouts/LayoutSection.astro";
+import AnchorWithIconAndLabel from "./AnchorWithIconAndLabel.astro";
+import IconWithLabel from "./IconWithLabel.astro";
 ---
-<LayoutSection title="Contact" colorSection="primary" id="contact">
+
+<LayoutSection title="Contact" colorSection="section-primary" id="contact">
+  <div
+    class="w-full h-auto md:p-10 gap-10 flex md:justify-around md:items-center flex-col md:flex-row"
+  >
+    <aside
+      class="flex flex-col gap-12 w-auto p-6 self-center-safe md:self-start"
+    >
+      <!-- Linkedin icon and link -->
+      <div class="flex gap-4 items-center">
+        <AnchorWithIconAndLabel
+          href="https://www.linkedin.com/in/anthony-ruiz-7820b7161/"
+          iconName="Linkedin"
+          label="Linkedin"
+        />
+        <span class="font-semibold" id="linkedin-text"
+          >linkedin.com/in/anthony-ruiz-7820b7161/</span
+        >
+        <div class="relative group">
+          <span
+            id="linkedin-tooltip"
+            class="hidden lg:block absolute -top-10 transform -translate-y-1/2 mt-2 text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-bold"
+          >
+            Copy to clipboard
+          </span>
+          <Icon
+            id="linkedin-copy"
+            name="Clipboard"
+            class="text-2xl cursor-pointer"
+          />
+          <span
+            id="linkedin-tooltip-mobile"
+            class="text-xs lg:hidden absolute -top-2 transform -translate-y-1/2"
+            >Copy</span
+          >
+        </div>
+      </div>
+
+      <!-- Github icon and link -->
+      <div class="flex gap-4 items-center">
+        <AnchorWithIconAndLabel
+          href="https://github.com/anth1818"
+          iconName="Github"
+          label="Github"
+        />
+        <span class="font-semibold" id="github-text">github.com/anth1818</span>
+        <div class="relative group">
+          <span
+            id="github-tooltip"
+            class="hidden lg:block absolute -top-10 transform -translate-y-1/2 mt-2 text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-bold"
+          >
+            Copy to clipboard
+          </span>
+          <Icon
+            id="github-copy"
+            name="Clipboard"
+            class="text-2xl cursor-pointer"
+          />
+          <span
+            id="github-tooltip-mobile"
+            class="text-xs lg:hidden absolute -top-2 transform -translate-y-1/2"
+            >Copy</span
+          >
+        </div>
+      </div>
+
+      <!-- Location  -->
+      <div class="flex gap-4 items-center">
+        <IconWithLabel iconName="location" label="Location" class="text-2xl" />
+        <span class="font-semibold">Caracas,Venezuela</span>
+      </div>
+    </aside>
+
+    <section class="md:w-1/2 w-full">
+      <form
+        class="flex flex-col gap-4 w-full p-4 justify-center items-center"
+        action="https://formsubmit.co/ar.dev1850@gmail.com"
+        method="POST"
+      >
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          class="bg-section-secondary w-full p-4 border-gray-300 rounded-full"
+          placeholder="Full Name"
+        />
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          class="bg-section-secondary w-full p-4 border-gray-300 rounded-full"
+          placeholder="Email"
+        />
+
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          required
+          class="bg-section-secondary w-full p-4 border-gray-300 rounded-full"
+          placeholder="Subject"
+        />
+
+        <textarea
+          id="message"
+          name="message"
+          required
+          class="bg-section-secondary w-full p-4 border-gray-300 rounded-2xl resize-none field-sizing-content max-h-40 h-28"
+          placeholder="Message"></textarea>
+          
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="http://localhost:4321/EmailSent.html" />
+
+        <button
+          type="submit"
+          class="w-[100px] lg:w-[250px] p-2 m-8 rounded-3xl bg-tertiary-400 text-white font-semibold text-center block text-lg hover:bg-tertiary-200 transition duration-300 ease-in-out"
+          >Send</button
+        >
+      </form>
+    </section>
+  </div>
 </LayoutSection>
+
+<script>
+  import { actions } from "astro:actions";
+
+  const button = document.querySelector('button[type="submit"]');
+  button?.addEventListener("click", (event) => {
+    console.log("enviado"); // Evita el envío del formulario por defecto
+  });
+
+  // Función para copiar texto al portapapeles
+  function copyToClipboard(textId: string, tooltipId: string) {
+    const textElement = document.getElementById(textId);
+    const tooltipElement = document.getElementById(tooltipId);
+    const tooltipMobileElement = document.getElementById(`${tooltipId}-mobile`);
+    if (tooltipMobileElement) {
+      tooltipMobileElement.innerText = "Copied";
+      setTimeout(() => {
+        tooltipMobileElement.innerText = "Copy";
+      }, 2000); // Cambia el texto de nuevo después de 2 segundos
+    }
+
+    if (textElement) {
+      const text = textElement.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        if (tooltipElement) {
+          tooltipElement.innerText = "Copied";
+          setTimeout(() => {
+            tooltipElement.innerText = "Copy to clipboard";
+          }, 2000); // Cambia el texto de nuevo después de 2 segundos
+        }
+      });
+    }
+  }
+
+  // Agregar eventos a los botones de copiar
+  const linkedinCopyButton = document.getElementById("linkedin-copy");
+  const githubCopyButton = document.getElementById("github-copy");
+
+  linkedinCopyButton?.addEventListener("click", () =>
+    copyToClipboard("linkedin-text", "linkedin-tooltip")
+  );
+
+  githubCopyButton?.addEventListener("click", () =>
+    copyToClipboard("github-text", "github-tooltip")
+  );
+</script>

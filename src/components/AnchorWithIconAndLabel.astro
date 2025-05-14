@@ -1,6 +1,12 @@
 ---
 import { Icon } from "astro-icon/components";
 
+interface Props {
+  href?: string;
+  iconName: string;
+  label: string;
+}
+
 const {href = "#", iconName, label} = Astro.props;
 ---
 <div class="relative group">
@@ -12,8 +18,7 @@ const {href = "#", iconName, label} = Astro.props;
       <Icon name={iconName} />
     </a>
     <span
-      class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-bold"
-    >
-        {label}
-    </span>
+    class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 text-white text-sm opacity-80 md:opacity-0 md:group-hover:opacity-80 transition-opacity duration-300 font-bold"
+  >
+    {label}
   </div>

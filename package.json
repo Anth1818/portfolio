@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.2.5",
+    "@astrojs/vercel": "^8.1.4",
     "@iconify-json/mdi": "^1.2.3",
     "@radix-ui/react-slot": "^1.2.0",
     "@tailwindcss/vite": "^4.1.4",

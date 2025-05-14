@@ -1,12 +1,10 @@
 ---
-import { Icon } from "astro-icon/components";
 import Navigation from "./Navigation.astro";
-import IconWithLabel from "./IconWithLabel.astro";
 import AnchorWithIconAndLabel from "./AnchorWithIconAndLabel.astro";
 ---
 
 <!-- ---Home -->
-<section class="h-full" id="home">
+<section class="" id="home">
   <!-- ----nav -->
   <Navigation />
   <!-- ----hero -->
@@ -26,15 +24,15 @@ import AnchorWithIconAndLabel from "./AnchorWithIconAndLabel.astro";
     </div>
 
     <!-- information -->
-    <article class="absolute top-15 lg:top-35 lg:left-10 w-80 lg:w-1/2">
-      <div class="flex flex-col justify-center gap-5 ml-10">
+    <article class="absolute top-15 lg:top-35 lg:left-10 w-full lg:w-1/2 ">
+      <div class="flex flex-col justify-center gap-5 lg:ml-10 m-4">
         <h1 class="text-3xl text-white font-bold">
           <span class="text-tertiary-200">Hi, I'ts me</span>
           <br />
-          <span class="font-mono text-5xl inline-block">Anthony Ruiz</span>
+          <span class="font-mono text-3xl inline-block">Anthony Ruiz</span>
         </h1>
         <h2 class="text-4xl text-white font-semibold">
-          And I'm a <span class="text-tertiary-200">Frontend Developer</span>
+          And I'm a <span class="text-tertiary-200">Frontend web developer</span>
         </h2>
         <p class="text-white text-lg font-semibold hidden lg:block">
           I am a passionate Frontend Developer with a strong focus on creating
@@ -47,7 +45,7 @@ import AnchorWithIconAndLabel from "./AnchorWithIconAndLabel.astro";
         </p>
         <!-- social media icons -->
 
-        <div class="flex gap-5">
+        <div class="flex gap-10 justify-center lg:gap-5 lg:w-full lg:justify-start">
           <AnchorWithIconAndLabel
             href="https://www.linkedin.com/in/anthonyruiz1818/"
             iconName="Linkedin"
@@ -65,11 +63,11 @@ import AnchorWithIconAndLabel from "./AnchorWithIconAndLabel.astro";
           />
         </div>
       </div>
-      <div>
+      <div class="flex lg:w-full justify-center lg:justify-start mt-10 lg:mt-2">
         <a
           href="/src/assets/Cv.pdf"
           download
-          class="w-[250px] p-2 m-8 rounded-3xl bg-tertiary-400 text-white font-semibold text-center block text-lg"
+          class="w-[250px] p-2 m-8 rounded-3xl bg-tertiary-400 text-white font-semibold text-center block text-lg hover:bg-tertiary-200 transition duration-300 ease-in-out"
         >
           Download CV
         </a>

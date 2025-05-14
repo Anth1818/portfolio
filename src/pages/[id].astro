@@ -36,14 +36,14 @@ const {techStack, github, id, images, title, note, slug} = project.data;
         <a
           id="backToProjectsBtn"
           href="#projects"
-          class="border-tertiary-200 p-3 rounded-3xl text-md font-bold self-center bg-tertiary-200 hover:bg-tertiary-400 transition-colors duration-300"
+          class="border-tertiary-200 p-3 rounded-3xl text-md font-bold self-center bg-tertiary-400 hover:bg-tertiary-200 transition-colors duration-300"
           >Back to Projects</a
         >
         <Content />
         <p>
           <span class="text-tertiary-400 font-bold">Note:</span> {note}
         </p>
-        <div class="flex gap-5 pt-4">
+        <div class="flex gap-10 pt-4">
           {techStack.map((item) => {
             return (
               <IconWithLabel
@@ -57,7 +57,7 @@ const {techStack, github, id, images, title, note, slug} = project.data;
         <a
           href={github}
           target="_blank"
-          class="w-[250px] p-2 m-8 rounded-3xl bg-tertiary-400 text-white font-semibold text-center block text-lg"
+          class="w-[250px] p-2 m-8 rounded-3xl bg-tertiary-400 text-white font-semibold text-center block text-lg hover:bg-tertiary-200 transition duration-300 ease-in-out"
         >
           Look at on Github
         </a>
