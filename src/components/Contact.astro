@@ -3,9 +3,14 @@ import { Icon } from "astro-icon/components";
 import LayoutSection from "../layouts/LayoutSection.astro";
 import AnchorWithIconAndLabel from "./AnchorWithIconAndLabel.astro";
 import IconWithLabel from "./IconWithLabel.astro";
+import Spinner from "./Spinner.astro";
+
+
+
 ---
 
 <LayoutSection title="Contact" colorSection="section-primary" id="contact">
+ 
   <div
     class="w-full h-auto md:p-10 gap-10 flex md:justify-around md:items-center flex-col md:flex-row"
   >
@@ -80,8 +85,7 @@ import IconWithLabel from "./IconWithLabel.astro";
     <section class="md:w-1/2 w-full">
       <form
         class="flex flex-col gap-4 w-full p-4 justify-center items-center"
-        action="https://formsubmit.co/ar.dev1850@gmail.com"
-        method="POST"
+        id="contact-form"
       >
         <input
           type="text"
@@ -103,8 +107,8 @@ import IconWithLabel from "./IconWithLabel.astro";
 
         <input
           type="text"
-          id="subject"
-          name="subject"
+          id="title"
+          name="title"
           required
           class="bg-section-secondary w-full p-4 border-gray-300 rounded-full"
           placeholder="Subject"
@@ -116,28 +120,59 @@ import IconWithLabel from "./IconWithLabel.astro";
           required
           class="bg-section-secondary w-full p-4 border-gray-300 rounded-2xl resize-none field-sizing-content max-h-40 h-28"
           placeholder="Message"></textarea>
-          
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="http://localhost:4321/EmailSent.html" />
 
         <button
           type="submit"
-          class="w-[100px] lg:w-[250px] p-2 m-8 rounded-3xl bg-tertiary-400 text-white font-semibold text-center block text-lg hover:bg-tertiary-200 transition duration-300 ease-in-out"
-          >Send</button
+          class="w-[100px] lg:w-[250px] p-2 m-8 rounded-3xl bg-tertiary-400 text-white font-semibold text-center block text-lg hover:bg-tertiary-200 transition duration-300 ease-in-out cursor-pointer"
         >
+          <span id="spinner" class="hidden w-full justify-center"
+            ><Spinner /></span
+          >
+          <span id="send" class="block">Send</span>
+        </button>
       </form>
     </section>
   </div>
 </LayoutSection>
 
-<script>
-  import { actions } from "astro:actions";
+<script type="text/javascript" is:inline>
+  const button = document.querySelector("button");
+  button.addEventListener("click", function () {
+    const form = document.getElementById("contact-form");
+    if (!form) return;
 
-  const button = document.querySelector('button[type="submit"]');
-  button?.addEventListener("click", (event) => {
-    console.log("enviado"); // Evita el envío del formulario por defecto
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const spinner = document.getElementById("spinner");
+      const textSend = document.getElementById("send");
+      spinner.classList.remove("hidden");
+      spinner.classList.add("flex");
+      textSend.classList.add("hidden");
+
+      emailjs
+        .sendForm("contact_service", "contact_template", this)
+        .then(
+          () => {
+            window.location.href = "/EmailSent";
+            console.log("Email sent successfully");
+          },
+          (error) => {
+              alert(
+                "Error sending email, please try again later."
+              );
+              console.log("Error sending email: ", error);
+            }
+        )
+        .finally(() => {
+          spinner.classList.add("hidden");
+          textSend.classList.remove("hidden");
+        });
+    });
   });
+</script>
 
+
+<script>
   // Función para copiar texto al portapapeles
   function copyToClipboard(textId: string, tooltipId: string) {
     const textElement = document.getElementById(textId);

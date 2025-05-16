@@ -1,12 +1,19 @@
 ---
 import Navigation from "./Navigation.astro";
 import AnchorWithIconAndLabel from "./AnchorWithIconAndLabel.astro";
+import MobileNavigation from "./MobileNavigation";
 ---
 
 <!-- ---Home -->
-<section class="" id="home">
+<section id="home" >
   <!-- ----nav -->
   <Navigation />
+
+  <!-- nav mobile -->
+  <div class="absolute z-10">
+   <MobileNavigation client:load />
+  </div>
+
   <!-- ----hero -->
   <section>
     <div>
@@ -24,7 +31,7 @@ import AnchorWithIconAndLabel from "./AnchorWithIconAndLabel.astro";
     </div>
 
     <!-- information -->
-    <article class="absolute top-15 lg:top-35 lg:left-10 w-full lg:w-1/2 ">
+    <article class="absolute top-15 lg:top-35 lg:left-10 w-full lg:w-1/2">
       <div class="flex flex-col justify-center gap-5 lg:ml-10 m-4">
         <h1 class="text-3xl text-white font-bold">
           <span class="text-tertiary-200">Hi, I'ts me</span>
@@ -32,7 +39,8 @@ import AnchorWithIconAndLabel from "./AnchorWithIconAndLabel.astro";
           <span class="font-mono text-3xl inline-block">Anthony Ruiz</span>
         </h1>
         <h2 class="text-4xl text-white font-semibold">
-          And I'm a <span class="text-tertiary-200">Frontend web developer</span>
+          And I'm a <span class="text-tertiary-200">Frontend web developer</span
+          >
         </h2>
         <p class="text-white text-lg font-semibold hidden lg:block">
           I am a passionate Frontend Developer with a strong focus on creating
@@ -45,7 +53,9 @@ import AnchorWithIconAndLabel from "./AnchorWithIconAndLabel.astro";
         </p>
         <!-- social media icons -->
 
-        <div class="flex gap-10 justify-center lg:gap-5 lg:w-full lg:justify-start">
+        <div
+          class="flex gap-10 justify-center lg:gap-5 lg:w-full lg:justify-start"
+        >
           <AnchorWithIconAndLabel
             href="https://www.linkedin.com/in/anthonyruiz1818/"
             iconName="Linkedin"
@@ -65,8 +75,6 @@ import AnchorWithIconAndLabel from "./AnchorWithIconAndLabel.astro";
       </div>
       <div class="flex lg:w-full justify-center lg:justify-start mt-10 lg:mt-2">
         <a
-          href="/src/assets/Cv.pdf"
-          download
           class="w-[250px] p-2 m-8 rounded-3xl bg-tertiary-400 text-white font-semibold text-center block text-lg hover:bg-tertiary-200 transition duration-300 ease-in-out"
         >
           Download CV
