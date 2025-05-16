@@ -9,6 +9,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { useState } from "react";
+import logo from "src/icons/AR.Dev.svg"
 
 
 export default function MobileNavigation() {
@@ -53,7 +54,7 @@ export default function MobileNavigation() {
           <DrawerDescription>Menú de navegación</DrawerDescription>
         </DrawerHeader>
         <nav className="flex flex-col gap-8 items-center py-6">
-          <img src="src/icons/AR.Dev.svg" alt="logo" className="w-20 h-20" />
+          <img src={logo.src} alt="logo" className="w-20 h-20" />
           {/* Links */}
           <ul className="flex flex-col gap-4 items-center">
             {[
