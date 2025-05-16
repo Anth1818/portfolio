@@ -2,6 +2,7 @@
 import Navigation from "./Navigation.astro";
 import AnchorWithIconAndLabel from "./AnchorWithIconAndLabel.astro";
 import MobileNavigation from "./MobileNavigation";
+import hero from "src/assets/hero-image.jpg"
 ---
 
 <!-- ---Home -->
@@ -18,7 +19,7 @@ import MobileNavigation from "./MobileNavigation";
   <section>
     <div>
       <img
-        src="/src/assets/hero-image.jpg"
+        src={hero.src}
         alt="hero image"
         class="w-full h-screen object-cover object-center"
         loading="lazy"

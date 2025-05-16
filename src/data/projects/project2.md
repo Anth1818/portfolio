@@ -1,14 +1,14 @@
 ---
 title: "Worker ID generator system"
-images: 
-  - public/capture-projects/project-2/captura-1.png
-  - public/capture-projects/project-2/captura-2.png
-  - public/capture-projects/project-2/captura-3.png
-  - public/capture-projects/project-2/captura-4.png 
-  - public/capture-projects/project-2/captura-5.png
-  - public/capture-projects/project-2/captura-6.png
-  - public/capture-projects/project-2/captura-7.png
-  - public/capture-projects/project-2/captura-8.png
+images:
+  - capture-projects/project-2/captura-1.png
+  - capture-projects/project-2/captura-2.png
+  - capture-projects/project-2/captura-3.png
+  - capture-projects/project-2/captura-4.png 
+  - capture-projects/project-2/captura-5.png
+  - capture-projects/project-2/captura-6.png
+  - capture-projects/project-2/captura-7.png
+  - capture-projects/project-2/captura-8.png
  
 # description: "Attendance control system for a institution. The system allows to register time of entry and exit of employees, also allows to get a report of each employee of every day, week or month, it has different filters to search by worker, department or date range. The system was developed using react for the frontend and nodejs for the backend. The database used was postgredSQL. The system was developed in 2024."
 

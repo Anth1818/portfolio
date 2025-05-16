@@ -1,6 +1,7 @@
 ---
 import LayoutSection from "../layouts/LayoutSection.astro";
 import Badges from "./Badges.astro";
+import photo from "src/assets/foto-linkedin.jpg"
 ---
 
 <LayoutSection title="About Me" colorSection="section-primary" id="about">
@@ -8,7 +9,7 @@ import Badges from "./Badges.astro";
     <!-- Photo -->
     <div class="max-w-[100px] md:max-w-[250px]">
       <img
-        src="/src/assets/foto-linkedin.jpg"
+        src={photo.src}
         alt="Foto de perfil"
         class="w-fit rounded-3xl border-tertiary-400"
       />

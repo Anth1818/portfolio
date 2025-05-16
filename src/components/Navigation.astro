@@ -1,10 +1,11 @@
 ---
 import { Icon } from "astro-icon/components";
+import logo from "src/icons/AR.Dev.svg"
 ---
 
 <nav
     class="hidden lg:absolute top-0 left-0 lg:flex lg:flex-row w-full gap-1 justify-around items-center bg-section-primary text-white h-20 z-10">
-      <img src="/src/icons/AR.Dev.svg" alt="logo" class="w-20 h-20" />
+      <img src={logo.src} alt="logo" class="w-20 h-20" />
 
       <!-- ------links -->
       <section class="flex gap-10">

@@ -1,21 +1,21 @@
 ---
 title: "Attendance control"
 images: 
-  - public/capture-projects/project-1/captura-1.png
-  - public/capture-projects/project-1/captura-3.png
-  - public/capture-projects/project-1/captura-4.png 
-  - public/capture-projects/project-1/captura-5.png
-  - public/capture-projects/project-1/captura-6.png
-  - public/capture-projects/project-1/captura-7.png
-  - public/capture-projects/project-1/captura-8.png
-  - public/capture-projects/project-1/captura-9.png
-  - public/capture-projects/project-1/captura-10.png  
-  - public/capture-projects/project-1/captura-11.png
-  - public/capture-projects/project-1/captura-12.png
-  - public/capture-projects/project-1/captura-13.png
-  - public/capture-projects/project-1/captura-14.png
-  - public/capture-projects/project-1/captura-15.png
-  - public/capture-projects/project-1/captura-16.png
+  - capture-projects/project-1/captura-1.png
+  - capture-projects/project-1/captura-3.png
+  - capture-projects/project-1/captura-4.png 
+  - capture-projects/project-1/captura-5.png
+  - capture-projects/project-1/captura-6.png
+  - capture-projects/project-1/captura-7.png
+  - capture-projects/project-1/captura-8.png
+  - capture-projects/project-1/captura-9.png
+  - capture-projects/project-1/captura-10.png  
+  - capture-projects/project-1/captura-11.png
+  - capture-projects/project-1/captura-12.png
+  - capture-projects/project-1/captura-13.png
+  - capture-projects/project-1/captura-14.png
+  - capture-projects/project-1/captura-15.png
+  - capture-projects/project-1/captura-16.png
 
 note: "I only worked on the frontend of this project, the backend was developed by a other developer worker of this institution."
 
