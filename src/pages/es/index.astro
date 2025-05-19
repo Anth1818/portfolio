@@ -1,0 +1,27 @@
+---
+import AboutMe from '../../components/section/AboutMe.astro';
+import Contact from '../../components/section/Contact.astro';
+import Home from '../../components/section/Home.astro';
+import Projects from '../../components/section/Projects.astro';
+import SoftSkills from '../../components/section/SoftSkills.astro';
+import Technologies from '../../components/section/Technologies.astro';
+import Layout from '../../layouts/Layout.astro';
+import Footer from '../../components/section/Footer.astro';
+import ScrollToTop from '../../components/ScrollToTop.tsx';
+import "../../styles/global.css"
+import ContactForm from '../../components/ContactForm.tsx';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<Home  lang="es"/>
+	<AboutMe lang="es"/>
+	<Projects lang="es"/>
+	<Technologies lang="es" />
+	<SoftSkills lang="es"/>
+	<Contact lang="es" />
+	<Footer lang="es"/>
+	<ScrollToTop client:load/>
+</Layout>

@@ -1,0 +1,32 @@
+---
+import { Icon } from "astro-icon/components";
+
+const {lang} = Astro.props
+---
+
+<!-- language -->
+<section class="flex gap-10 text-white">
+    {lang === "es" ? (
+      <>
+        <button class="flex gap-2 p-2 rounded-3xl transition-all ease-in bg-tertiary-400 items-center hover:cursor-pointer hover:bg-tertiary-400 disabled:cursor-not-allowed" disabled>
+          <h3 class="disabled:text-gray-600 font-bold">Español</h3>
+          <Icon name="CircleFlagsEs" />
+        </button>
+        <a href="/" class="flex gap-2 p-2 rounded-sm transition-all ease-in items-center hover:cursor-pointer hover:bg-tertiary-400" >
+          <h3>Ingles</h3>
+          <Icon name="CircleFlagsUs" />
+        </a>
+      </>
+    ) : (
+      <>
+        <a href="/es" class="flex gap-2 p-2 rounded-sm transition-all ease-in items-center hover:cursor-pointer hover:bg-tertiary-400">
+          <h3>Spanish</h3>
+          <Icon name="CircleFlagsEs" />
+        </a>
+        <button class="flex gap-2 p-2 rounded-3xl transition-all ease-in bg-tertiary-400 items-center hover:cursor-pointer hover:bg-tertiary-400 disabled:cursor-not-allowed" disabled>
+          <h3 class="disabled:text-gray-600 font-bold">English</h3>
+          <Icon name="CircleFlagsUs" />
+        </button>
+      </>
+    )}
+  </section>

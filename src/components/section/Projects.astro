@@ -1,0 +1,56 @@
+---
+import { Icon } from "astro-icon/components";
+import LayoutSection from "../../layouts/LayoutSection.astro";
+import { getCollection } from "astro:content";
+
+const {lang} = Astro.props
+
+const projectsEn = await getCollection("projectsEn");
+const projectsEs = await getCollection("projectsEs");
+
+---
+
+<LayoutSection title={lang === "es" ? "Proyectos" : "Projects"} colorSection="section-secondary" id="projects">
+  <div
+    class="grid gap-y-10 w-3/4 md:grid md:grid-cols-[repeat(3,1fr)] md:grid-rows-[repeat(3,1fr)] md:gap-y-[10px] md:gap-x-[10px]"
+  >
+    {lang === "es" ? projectsEs.map((project) => (
+    <div class="relative group">
+      <img
+        src={project.data.images[0]}
+        alt={project.data.title}
+        class="w-full h-[150px] md:h-[200px] object-cover rounded-lg"
+        transition:name={project.data.slug}
+      />
+      
+      <a href={`es/${project.data.slug}`}>
+        <div
+          class="absolute inset-0 bg-section-primary bg-opacity-70 flex flex-col justify-center items-center opacity-80 md:opacity-0 md:group-hover:opacity-80 transition-opacity duration-300 rounded-lg"
+        >
+          <p class="text-white text-lg font-bold mb-2">{project.data.title}</p>
+          <Icon name="Link" />
+        </div>
+      </a>
+    </div>
+  )): projectsEn.map((project) => (
+      <div class="relative group">
+        <img
+          src={project.data.images[0]}
+          alt={project.data.title}
+          class="w-full h-[150px] md:h-[200px] object-cover rounded-lg"
+          transition:name={project.data.slug}
+        />
+        <a href={project.data.slug}>
+          <div
+            class="absolute inset-0 bg-section-primary bg-opacity-70 flex flex-col justify-center items-center opacity-80 md:opacity-0 md:group-hover:opacity-80 transition-opacity duration-300 rounded-lg"
+          >
+            <p class="text-white text-lg font-bold mb-2">{project.data.title}</p>
+            <Icon name="Link" />
+          </div>
+        </a>
+      </div>
+    ))}
+    {}
+  </div>
+
+</LayoutSection>

@@ -1,18 +1,14 @@
 ---
 import { Icon } from "astro-icon/components";
 
-interface Props {
-    titleCard: string;
-    iconCardName: string;
-}
 
-const { titleCard, iconCardName } = Astro.props;
+const { titleCard, iconCardName, lang } = Astro.props;
 ---
 
 <aside
-  class="flex flex-col w-full m-4 h-1/4 items-center p-2 justify-evenly lg:w-72 lg:h-3/4 md:p-8 text-center text-section-secondary bg-white rounded-lg shadow-lg"
+  class="flex flex-col w-full m-4 h-1/4 items-center p-2 justify-evenly lg:w-72 lg:h-[400px] md:p-8 text-center text-section-secondary bg-neutral-200 rounded-lg shadow-lg"
 >
-<Icon name={iconCardName} class={"w-14 h-14 d:w-14 md:h-14"} />
+<Icon name={iconCardName} class={"w-14 h-14 "} />
   <h2 class="text-xl font-bold font-sans">{titleCard}</h2>
   <p class="font-sans md:text-md text-sm">
     <slot />

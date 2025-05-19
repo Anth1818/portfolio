@@ -1,43 +1,60 @@
 ---
-import { Icon } from "astro-icon/components";
 import logo from "src/icons/AR.Dev.svg"
+import Language from "./Language.astro";
+
+const {lang} = Astro.props
+
+const contenNav = {
+  labelEs: {
+    home: "Inicio",
+    about: "Sobre mí",
+    projects: "Proyectos",
+    technologies: "Tecnologías",
+    softSkills: "Habilidades Blandas",
+    contact: "Contáctame",
+    english:"Ingles"
+  },
+  labelEn: {
+    home: "Home",
+    about: "About me",
+    projects: "Projects",
+    technologies: "Technologies",
+    softSkills: "Soft Skills",
+    contact: "Contact me",
+    spanish: "Spanish"
+  }
+
+  
+}
+
 ---
 
 <nav
     class="hidden lg:absolute top-0 left-0 lg:flex lg:flex-row w-full gap-1 justify-around items-center bg-section-primary text-white h-20 z-10">
       <img src={logo.src} alt="logo" class="w-20 h-20" />
-
+      {/*
+        Render navigation links and language switcher based on the `lang` prop and `contenNav`
+      */}
       <!-- ------links -->
       <section class="flex gap-10">
         <ul class="flex gap-10 items-center">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About me</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#technologies">Technologies</a></li>
-          <li><a href="#soft-skills">Soft Skills</a></li>
+          <li><a class="nav-link" href="#home">{lang === "es" ? contenNav.labelEs.home : contenNav.labelEn.home}</a></li>
+          <li><a class="nav-link" href="#about">{lang === "es" ? contenNav.labelEs.about : contenNav.labelEn.about}</a></li>
+          <li><a class="nav-link" href="#projects">{lang === "es" ? contenNav.labelEs.projects : contenNav.labelEn.projects}</a></li>
+          <li><a class="nav-link" href="#technologies">{lang === "es" ? contenNav.labelEs.technologies : contenNav.labelEn.technologies}</a></li>
+          <li><a class="nav-link" href="#soft-skills">{lang === "es" ? contenNav.labelEs.softSkills : contenNav.labelEn.softSkills}</a></li>
         </ul>
   
         <!-- contact me -->
         <a
           href="#contact"
-          class="p-1.5 w-36 rounded-3xl bg-tertiary-400 text-white font-semibold text-center hover:bg-tertiary-200 transition duration-300 ease-in-out"
+          class="p-1.5 w-36 rounded-3xl bg-tertiary-400 text-white font-semibold text-center nav-link"
         >
-          Contact me</a
-        >
+          {lang === "es" ? contenNav.labelEs.contact : contenNav.labelEn.contact}
+        </a>
       </section>
   
-      <!-- language -->
-      <section class="flex gap-10">
-        <div class="flex gap-2 items-center">
-          <h3>English</h3>
-          <Icon name="CircleFlagsUs" />
-        </div>
-  
-        <div class="flex gap-2 items-center">
-          <h3>Spanish</h3>
-          <Icon name="CircleFlagsEs" />
-        </div>
-      </section>
-    <!----logo -->
-   
+      <Language lang={lang} />
+    
   </nav>
+

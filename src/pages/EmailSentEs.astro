@@ -1,0 +1,30 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout>
+  <section class="bg-section-primary w-full h-full">
+    <div
+      class="w-full mx-auto flex flex-col justify-center items-center gap-4 p-4 self-baseline text-white bg-section-primary"
+    >
+      <h2
+        class="pt-10 text-3xl text-center border-b-2 pb-2 border-b-tertiary-400"
+      >
+        Correo Enviado
+      </h2>
+      <img
+        src="src/assets/emailSent.gif"
+        alt="Correo Enviado"
+        class="w-[150px] h-[150px]" 
+      />
+      <p class="text-center">
+        Gracias por tu mensaje, te responderé lo más pronto posible
+      </p>
+      <a
+        href="/es"
+        class="border-tertiary-200 p-3 rounded-3xl text-md font-bold self-center bg-tertiary-400 hover:bg-tertiary-200 transition-colors duration-300"
+        >Volver al inicio</a
+      >
+    </div>
+  </section>
+</Layout>

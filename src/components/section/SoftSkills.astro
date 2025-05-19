@@ -1,0 +1,45 @@
+---
+import LayoutSection from "../../layouts/LayoutSection.astro";
+import SoftSkillsCard from "../SoftSkillsCard.astro";
+
+const { lang } = Astro.props;
+// const contentCard = {
+//   es: {
+
+//   }
+//   en: ""
+// }
+---
+
+<LayoutSection
+  title={lang === "es" ? "Mis habilidades blandas" : "My Soft Skill"}
+  colorSection="section-secondary"
+  id="soft-skills"
+>
+  <div class="w-full h-full flex flex-wrap justify-center">
+    <SoftSkillsCard
+      iconCardName="TeamWork"
+      titleCard={lang === "es" ? "Trabajo en equipo" : "TeamWork"}
+    >
+      {
+        lang === "es"
+          ? " Soy una persona que valora el trabajo en equipo, la colaboración y la comunicación. Creo que trabajar juntos conduce a mejores resultados y a un ambiente laboral más agradable."
+          : "I am a team player who values collaboration and communication. I believe that working together leads to better results and a more enjoyable work environment."
+      }
+    </SoftSkillsCard>
+    <SoftSkillsCard
+      iconCardName="GoodCommunication"
+      titleCard={lang === "es" ? "Buena comunicación" : "GoodCommunication"}>
+    
+    {lang === "es" ? "La comunicación es la clave del éxito en el mundo tecnológico. Siempre procuro ser claro y conciso en mis interacciones, asegurando que las ideas se compartan y comprendan eficazmente." : "The communication is the key to success in the tech world. I always try to be clear and concise in my interactions, ensuring that ideas are effectively shared and understood."}
+     
+    </SoftSkillsCard>
+
+    <SoftSkillsCard iconCardName="light-bulb" titleCard={lang === "es" ? "Resolución de problemas" : "Troubleshooting"}>
+      {lang === "es"
+        ? "Tengo facilidad para identificar y resolver problemas. Disfruto el reto de depurar y encontrar soluciones a cuestiones complejas."
+        : "I have a knack for identifying and solving problems. I enjoy the challenge of debugging and finding solutions to complex issues."
+      }
+    </SoftSkillsCard>
+  </div>
+</LayoutSection>

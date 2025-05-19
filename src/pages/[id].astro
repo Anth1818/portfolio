@@ -8,7 +8,7 @@ import IconWithLabel from "@/components/IconWithLabel.astro";
 
 export async function getStaticPaths() {
 
-  const projects = await getCollection("projects");
+  const projects = await getCollection("projectsEn");
   return projects.map((project) => ({
     params: { id: project.data.slug }, 
     props: { project },
