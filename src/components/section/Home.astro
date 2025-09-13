@@ -1,9 +1,10 @@
 ---
 import Navigation from "../Navigation.astro";
 import AnchorWithIconAndLabel from "../AnchorWithIconAndLabel.astro";
-import MobileNavigation from "../MobileNavigation";
 import hero from "src/assets/hero-image.jpg"
 import MobileTop from "../MobileTop.astro";
+import CV_ES from "src/assets/anthony_ruiz_CV_español.pdf"
+import CV_EN from "src/assets/anthony_ruiz_english_CV.pdf"
 
 const {lang} = Astro.props
 
@@ -97,6 +98,8 @@ const content = {
       </div>
       <div class="flex lg:w-full justify-center lg:justify-start mt-10 lg:mt-2">
         <a
+        href={lang === 'es' ? CV_ES : CV_EN}
+        download
           class="w-[250px] p-2 m-8 rounded-3xl bg-tertiary-400 text-white font-semibold text-center block text-lg hover:bg-tertiary-200 transition duration-300 ease-in-out"
         >
           {lang === "es" ? "Descargar CV" : "Download CV"}
